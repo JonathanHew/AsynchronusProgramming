@@ -58,3 +58,11 @@
     background-color: bisque;
     display: block;
 }
+
+#msg 
+{
+	color: red;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
