@@ -20,17 +20,18 @@
 {
     margin: auto;
     text-align: center;
-    background-color: blue;
+    background-color: lightblue;
     height: 100px;
     width: 90%;
     position: relative;
     margin-top: 5%;
+    border-radius: 10px;
+    border: 3px solid blue;
 }
 
 #row
 {
     position: absolute;
-    background-color: lightblue;
     top: 50%;
     left: 50%;
     margin-right: -50%;
@@ -46,7 +47,7 @@
 {
     margin: auto;
     text-align: center;
-    background-color: azure;
+    background-color: bisque;
     margin-top: 5%;
 }
 
@@ -79,3 +80,4 @@
 {
     background-color: #f2f2f2;
 }
+

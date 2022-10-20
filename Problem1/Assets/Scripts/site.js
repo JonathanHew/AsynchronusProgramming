@@ -206,3 +206,4 @@ let filterSearch = () => {
     noResult.style.display = "none";
   }
 }
+
