@@ -5,6 +5,8 @@ let contactEmail = document.getElementById("contactEmail");
 let searchNumber = document.getElementById("searchNumber");
 let msg = document.getElementById("msg");
 let contactTable = document.getElementById("contactTable");
+let input = document.getElementById("searchNumber");
+let noResult = document.getElementById("noResult");
 
 form.addEventListener("button", (e) => {
   e.preventDefault();
@@ -52,7 +54,7 @@ let acceptData = () => {
 
 let createContact = () => {
   // Create an empty <tr> element and add it to the 1st position of the table:
-  const row = contactTable.insertRow(1);
+  const row = contactTable.insertRow(-1);
 
   // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
   const cell1 = row.insertCell(0);
@@ -72,3 +74,104 @@ let resetForm = () => {
   contactNumber.value = "";
   contactEmail.value = "";
 };
+
+let sortTable = (n) => {
+  let rows = 0;
+  let switching = 0;
+  let i = 0;
+  let x =0;
+  let y = 0;
+  let shouldSwitch = 0;
+  let dir = 0;
+  let switchCount =0;
+
+  switching = true; 
+  dir = "asc";
+
+  //loop until no switching is done
+  while(switching)
+  {
+    //start with no switching done
+    switching = false; 
+    rows = contactTable.rows;
+
+    console.log(rows);
+
+    for(i=1;i<(rows.length -1);i++)
+    {
+      shouldSwitch = false;
+      //compare current element and next eleemnt
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+
+      //check if the 2 rows should swap place
+      if(dir == "asc"){
+        if(x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())
+        {
+          shouldSwitch = true;
+          break;
+        }
+      }
+      else{
+        if(x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())
+        {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if(shouldSwitch)
+    {
+      rows[i].parentNode.insertBefore(rows[i+1], rows[i]);
+      switching = true;
+      switchCount++;
+    }
+    else
+    {
+      if(switchCount == 0 && dir == "asc")
+      {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+
+let filterSearch = () => {
+  let tr = contactTable.getElementsByTagName("tr");
+  let td = 0;
+  let i =0;
+  let text = 0;
+  let filter = 0;
+  let hits = 0;
+
+  filter = input.value.toUpperCase();
+
+  for(i=0;i<tr.length;i++)
+  {
+    td = tr[i].getElementsByTagName("td")[1];
+    if(td)
+    {
+      text = td.textContent || td.innerText;
+
+      if(text.toUpperCase().indexOf(filter) >- 1)
+      {
+        tr[i].style.display ="";
+        hits++;
+      }
+      else
+      {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+
+  if(hits == 0)
+  {
+    noResult.style.display = "block";
+  }
+  else
+  {
+    noResult.style.display = "none";
+  }
+}

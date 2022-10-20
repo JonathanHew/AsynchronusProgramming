@@ -27,38 +27,41 @@
                 
                 <div id = "searchMobile">
                     <label> Search contact by Mobile No:</label>
-                    <input type ="text" id="searchNumber"> </input>
+                    <input type ="text" id="searchNumber" onkeyup="filterSearch()"> </input>
 
                 </div>
 
                 <div id="contacts">
-                    <p>Contacts Summary</p>
+                    <h5 class="text-center mb-2">Contacts Summary</h5>
                     <table class="table" id="contactTable">
                         <thead>
                           <tr>
-                            <th scope="col">Name</th>
+                            <th scope="col" onclick="sortTable(0)">Name</th>
                             <th scope="col">Mobile</th>
                             <th scope="col">Email</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>Charlie</td>
+                            <td>0831234567</td>
+                            <td>charlie226@gmail.com</td>
                           </tr>
                           <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Alex</td>
+                            <td>0872314567</td>
+                            <td>alex721@gmail.com</td>
                           </tr>
                           <tr>
-                            <td>Larry</td>
-                            <td>123</td>
-                            <td>@twitter</td>
+                            <td>Brandon</td>
+                            <td>0834589012</td>
+                            <td>brandon000@gmail.com</td>
                           </tr>
                         </tbody>
                       </table>
+                </div>
+                <div id = "noResult">
+                  <p>No Result</p>
                 </div>
             </div>
         </div>

@@ -66,3 +66,16 @@
     margin: auto;
     text-align: center;
 }
+
+#noResult
+{
+    margin: auto;
+    text-align: center;
+    display: none;
+    color: red;
+}
+
+#contacts tbody tr:nth-child(odd)
+{
+    background-color: #f2f2f2;
+}
