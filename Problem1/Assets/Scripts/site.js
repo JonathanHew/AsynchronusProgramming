@@ -21,14 +21,45 @@ let formValidation = () => {
     msg.innerHTML += `<p>Name cannot be blank!</p>`;
     valid = false;
   }
+  else if(/^[a-zA-Z\s]+$/.test(contactName.value) == false)
+  {
+    msg.innerHTML += `<p>Name can only contain characters!</p>`;
+    valid = false;
+  }
+  else if(contactName.value.length > 20)
+  {
+    msg.innerHTML += `<p>Name cannot be more than 20 characters!</p>`;
+    valid = false;
+  }
+
 
   if (contactNumber.value === "") {
     msg.innerHTML += `<p>Number cannot be blank!</p>`;
     valid = false;
   }
+  else if(/^[0-9]*$/.test(contactNumber.value) == false)
+  {
+    msg.innerHTML += `<p>Number can only contain numbers!</p>`;
+    valid = false;
+  }
+  else if(contactNumber.value.length != 10)
+  {
+    msg.innerHTML += `<p>Number cmust be 10 digits long!</p>`;
+    valid = false;
+  }
 
   if (contactEmail.value === "") {
     msg.innerHTML += `<p>Email cannot be blank!</p>`;
+    valid = false;
+  }
+  else if(/^\S+@\S+\.\S+$/.test(contactEmail.value) == false)
+  {
+    msg.innerHTML += `<p>Email is not in the correct format!</p>`;
+    valid = false;
+  }
+  else if(contactEmail.value.length > 40)
+  {
+    msg.innerHTML += `<p>Email should be less than 40 characters!</p>`;
     valid = false;
   }
 
