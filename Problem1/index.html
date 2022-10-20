@@ -17,7 +17,7 @@
                             <input type="text" placeholder="Contact Name" id="contactName">
                             <input type="text" placeholder="Mobile Number" id="contactNumber">
                             <input type="text" placeholder="Email" id="contactEmail">
-                            <button type="submit" onclick="return formValidation()">Add Contact</button>
+                            <button type="button" onclick="return formValidation()">Add Contact</button>
                     </form>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
 
                 <div id="contacts">
                     <p>Contacts Summary</p>
-                    <table class="table">
+                    <table class="table" id="contactTable">
                         <thead>
                           <tr>
                             <th scope="col">Name</th>
