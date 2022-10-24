@@ -10,8 +10,81 @@
 	margin: auto;
 	width: 80%;
 	height: auto;
-	min-height: 1140px;
+	min-height: 1600px;
 	border: 5px solid c;
 	padding: 15px;
 	background-color: #C5FAD5;
+}
+
+#searchArea
+{
+    margin-top: 5%;
+    width: 100%;
+    height: fit-content;
+    background-color: pink;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#userArea
+{
+    width: 100%;
+    background-color: green;
+}
+
+#profileArea
+{
+    display: inline-block;
+    width: 49%;
+    background-color: yellow;
+    float: left;
+    padding: 5px;
+}
+
+#repoArea
+{
+    display: inline-block;
+    width: 49%;
+    background-color: lightskyblue;
+    float: right;
+    padding: 5px;
+}
+
+#profileImage
+{
+    height: 49%;
+    width: 100%;
+    background-color: orange;
+    display: block;
+    padding: 10px;
+}
+
+#profileImage img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#profileInfo
+{
+    height: 49%;
+    background-color: turquoise;
+    display: block;
+    padding: 5px;
+}
+.info
+{
+    display: block;
+    width: 100%;
+    height: 75px;
+    border: solid red 2px;
+    
+}
+
+.repo
+{
+    display: block;
+    width: 100%;
+    height: 100px;
+    border: solid red 2px;
 }

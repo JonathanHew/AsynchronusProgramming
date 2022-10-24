@@ -8,7 +8,7 @@ fetch("https://api.github.com/users/jonathanhew")
   })
   .then(data => {
     console.log(data);
-    displayUser(data)
+    //displayUser(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
