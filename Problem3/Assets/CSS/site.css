@@ -1,0 +1,17 @@
+#wrapper
+{
+	width: 100%;
+	background-color: #aa96da;
+	min-height: 1140px;
+}
+
+#app
+{
+	margin: auto;
+	width: 80%;
+	height: auto;
+	min-height: 1140px;
+	border: 5px solid c;
+	padding: 15px;
+	background-color: #C5FAD5;
+}

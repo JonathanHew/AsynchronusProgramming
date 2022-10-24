@@ -44,7 +44,7 @@ let formValidation = () => {
   }
   else if(contactNumber.value.length != 10)
   {
-    msg.innerHTML += `<p>Number cmust be 10 digits long!</p>`;
+    msg.innerHTML += `<p>Number must be 10 digits long!</p>`;
     valid = false;
   }
 
