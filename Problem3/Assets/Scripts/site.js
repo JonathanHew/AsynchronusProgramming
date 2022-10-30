@@ -3,24 +3,30 @@ const uname = document.createElement("p");
 const email = document.createElement("p");
 const ulocation = document.createElement("p");
 const gists = document.createElement("p");
+const errMsg = document.getElementById("errMsg")
+
 
 let searchValidation = () => {
-  removeData();
-  const searchValue = document.getElementById("searchValue");
+  let searchValue = document.getElementById("searchValue");
+  hideError();
 
   fetch(`https://api.github.com/users/${searchValue.value}`)
   .then((response) => {
     if (response.ok) {
+      searchValue.value = "";
       return response.json();
     } else {
+      showError();
       throw new Error("NETWORK RESPONSE ERROR");
     }
   })
   .then(data => {
+    removeData();
     console.log(data);
     displayUser(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
+
 }
 
 
@@ -73,4 +79,12 @@ function removeData() {
   email.innerHTML = "";
   ulocation.innerHTML = "";
   gists.innerHTML = "";
+}
+
+function showError() {
+  errMsg.style.display = "block";
+}
+
+function hideError() {
+  errMsg.style.display = "none";
 }
