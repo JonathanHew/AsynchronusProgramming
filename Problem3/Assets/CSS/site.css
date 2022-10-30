@@ -1,19 +1,19 @@
 #wrapper
 {
 	width: 100%;
-	background-color: #aa96da;
-	height: 1300px;
+	background-color: #98A8F8;
+	height: 100%;
+    min-height: 1400px;
 }
-
 #app
 {
 	margin: auto;
 	width: 80%;
-	height: 1200px;
-	
+    height: 100%;
+    min-height: 1400px;
 	border: 5px solid c;
 	padding: 15px;
-	background-color: #C5FAD5;
+	background-color: #BCCEF8;
 }
 
 h1
@@ -31,7 +31,7 @@ h2
     margin-top: 5%;
     width: 100%;
     height: fit-content;
-    background-color: pink;
+    background-color: #CDFCF6;
     text-align: center;
     margin-bottom: 5%;
 }
@@ -52,7 +52,7 @@ input
 {
     display: inline-block;
     width: 49%;
-    background-color: yellow;
+    background-color: #FAF7F0;
     float: left;
 }
 
@@ -61,7 +61,7 @@ input
     display: inline-block;
     max-height: 965px;
     width: 49%;
-    background-color: lightskyblue;
+    background-color: #FAF7F0;
     float: right;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -71,7 +71,7 @@ input
 #profileImage
 {
     height: 49%;
-    background-color: orange;
+    background-color: #CDFCF6;
     display: block;
     padding: 10px;
 }
@@ -85,7 +85,7 @@ input
 #profileInfo
 {
     height: 49%;
-    background-color: turquoise;
+    background-color: #CDFCF6;
     display: block;
     padding: 5px;
 }
@@ -94,9 +94,9 @@ input
     display: block;
     width: 99%;
     height: 75px;
-    border: solid red 2px;
+    border: solid #98A8F8 2px;
     margin-bottom: 2px;
-    background-color: greenyellow;
+    background-color: #FAF7F0;
     
 }
 
@@ -116,10 +116,11 @@ input
     display: block;
     width: 99%;
     min-height: 150px;
-    border: solid red 2px;
+    border: solid #98A8F8 2px;
     margin-bottom: 2px;
     padding: 2px;
     word-wrap: break-word;
+    background-color: #CDFCF6;
 }
 
 #errMsg

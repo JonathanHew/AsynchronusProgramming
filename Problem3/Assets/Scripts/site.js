@@ -49,19 +49,27 @@ function displayUser(data) {
   usernameDiv.appendChild(userName);
 
   //setting name
-  uname.innerHTML = user.name;
+  if (user.uname == null) {
+    uname.innerHTML = "N/A";
+  } else {
+    uname.innerHTML = user.email;
+  }
   nameDiv.appendChild(uname);
 
   //setting email
   if (user.email == null) {
-    email.innerHTML = "null";
+    email.innerHTML = "N/A";
   } else {
     email.innerHTML = user.email;
   }
   emailDiv.appendChild(email);
 
   //setting location
-  ulocation.innerHTML = user.location;
+  if (user.ulocation == null) {
+    ulocation.innerHTML = "N/A";
+  } else {
+    ulocation.innerHTML = user.location;
+  }
   locationDiv.appendChild(ulocation);
 
   //setting gists
