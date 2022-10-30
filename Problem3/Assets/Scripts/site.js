@@ -1,4 +1,14 @@
-fetch("https://api.github.com/users/jonathanhew")
+const userName = document.createElement("p");
+const uname = document.createElement("p");
+const email = document.createElement("p");
+const ulocation = document.createElement("p");
+const gists = document.createElement("p");
+
+let searchValidation = () => {
+  removeData();
+  const searchValue = document.getElementById("searchValue");
+
+  fetch(`https://api.github.com/users/${searchValue.value}`)
   .then((response) => {
     if (response.ok) {
       return response.json();
@@ -11,6 +21,7 @@ fetch("https://api.github.com/users/jonathanhew")
     displayUser(data)
   })
   .catch((error) => console.error("FETCH ERROR:", error));
+}
 
 
 function displayUser(data) {
@@ -27,17 +38,14 @@ function displayUser(data) {
   image.src = userImage
 
   //setting username
-  const userName = document.createElement("p");
   userName.innerHTML = user.login;
   usernameDiv.appendChild(userName);
 
   //setting name
-  const name = document.createElement("p");
-  name.innerHTML = user.name;
-  nameDiv.appendChild(name);
+  uname.innerHTML = user.name;
+  nameDiv.appendChild(uname);
 
   //setting email
-  const email = document.createElement("p");
   if(user.email == null)
   {
     email.innerHTML = "null";
@@ -49,13 +57,20 @@ function displayUser(data) {
   emailDiv.appendChild(email);
 
   //setting location
-  const location = document.createElement("p");
-  location.innerHTML = user.location;
-  locationDiv.appendChild(location);
+  ulocation.innerHTML = user.location;
+  locationDiv.appendChild(ulocation);
 
   //setting gists
-  const gists = document.createElement("p");
   gists.innerHTML = user.public_gists;
   gistsDiv.appendChild(gists);
   
-}   
+}
+
+function removeData() {
+  image.src = "Assets/Images/defualt.png";
+  userName.innerHTML = "";
+  uname.innerHTML = "";
+  email.innerHTML = "";
+  ulocation.innerHTML = "";
+  gists.innerHTML = "";
+}
