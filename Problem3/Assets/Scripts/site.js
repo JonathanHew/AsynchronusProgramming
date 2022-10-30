@@ -22,32 +22,40 @@ function displayUser(data) {
   const locationDiv = document.getElementById("locationDiv");
   const gistsDiv = document.getElementById("gistsDiv");
 
+  //setting user image
   const userImage = user.avatar_url;
   image.src = userImage
 
+  //setting username
   const userName = document.createElement("p");
   userName.innerHTML = user.login;
   usernameDiv.appendChild(userName);
 
+  //setting name
   const name = document.createElement("p");
   name.innerHTML = user.name;
   nameDiv.appendChild(name);
 
+  //setting email
   const email = document.createElement("p");
-  email.innerHTML = user.email;
+  if(user.email == null)
+  {
+    email.innerHTML = "null";
+  }
+  else
+  {
+    email.innerHTML = user.email;
+  }
   emailDiv.appendChild(email);
 
+  //setting location
   const location = document.createElement("p");
   location.innerHTML = user.location;
   locationDiv.appendChild(location);
 
+  //setting gists
   const gists = document.createElement("p");
   gists.innerHTML = user.public_gists;
   gistsDiv.appendChild(gists);
-
-
-  //const heading = document.createElement("h1");
-  //heading.innerHTML = userName;
-  //app.appendChild(heading);
   
 }   
