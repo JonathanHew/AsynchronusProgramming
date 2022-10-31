@@ -49,10 +49,10 @@ function displayUser(data) {
   usernameDiv.appendChild(userName);
 
   //setting name
-  if (user.uname == null) {
+  if (user.name == null) {
     uname.innerHTML = "N/A";
   } else {
-    uname.innerHTML = user.email;
+    uname.innerHTML = user.name;
   }
   nameDiv.appendChild(uname);
 
@@ -65,12 +65,12 @@ function displayUser(data) {
   emailDiv.appendChild(email);
 
   //setting location
-  if (user.ulocation == null) {
+  if (user.location == null) {
     ulocation.innerHTML = "N/A";
   } else {
     ulocation.innerHTML = user.location;
   }
-  locationDiv.appendChild(ulocation);
+  locationDiv.appendChild(ulocation); 
 
   //setting gists
   gists.innerHTML = user.public_gists;
